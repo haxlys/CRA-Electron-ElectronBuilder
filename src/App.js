@@ -7,8 +7,7 @@ import Routes from "constants/route";
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
+    return <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
@@ -19,16 +18,15 @@ class App extends Component {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">about</Link>
+            <Link to="/charts">charts</Link>
           </li>
           <li>
-            <Link to="/topics">topics</Link>
+            <Link to="/albums">albums</Link>
           </li>
         </ul>
 
         <Routes />
       </div>
-    );
   }
 }
 

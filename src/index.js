@@ -1,20 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { ConnectedRouter, Switch, Route } from "react-router-redux";
+import { AppContainer } from 'react-hot-loader';
 
-import { store, history } from "./store";
-
-import "./css/index.css";
-import App from "./App";
-import registerServiceWorker from "./registerServiceWorker";
+import Root from "./Root";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <App />
-    </ConnectedRouter>
-  </Provider>,
+  <AppContainer>
+    <Root/>
+  </AppContainer>,
   document.getElementById("root")
 );
-registerServiceWorker();
+
+if (module.hot) {
+  module.hot.accept("./Root", () => {
+    const NextRoot = require("./Root") // eslint-disable-line global-require
+    ReactDOM.render(
+      <AppContainer>
+        <NextRoot />
+      </AppContainer>, document.getElementById("root"))
+  })
+}
