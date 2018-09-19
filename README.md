@@ -35,4 +35,6 @@ ConnectedRouter 사용시 자식 컴포넌트가 렌더에러나는 현상 때�
 
 리덕스 promise 를 사용하기 편하게 해주는 미들웨어
 
+## [folder structure](https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346)는 router 계층을 기반으로 한 폴더 구조
+
 ## thanks to [csepulv](https://github.com/csepulv/electron-with-create-react-app)
