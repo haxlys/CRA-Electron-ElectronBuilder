@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
 
 import logo from "./assets/logo.svg";
-import "./css/App.css";
+import "css/App.css";
+import Routes from "constants/route";
 
 class App extends Component {
   render() {
@@ -11,12 +13,27 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.!!!!!!!!!!!!!!!!!
-        </p>
+
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">about</Link>
+          </li>
+          <li>
+            <Link to="/topics">topics</Link>
+          </li>
+        </ul>
+
+        <Routes />
       </div>
     );
   }
 }
+
+const Home = () => <div>home~</div>;
+const About = () => <div>About~</div>;
+const Topics = () => <div>Topics~</div>;
 
 export default App;
